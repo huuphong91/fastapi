@@ -1,0 +1,55 @@
+{% include 'layout.html' %}
+
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+    <div class="text-center border-b pb-4 mb-6 text-2xl font-semibold">
+        Your Todo's!
+    </div>
+    <div class="text-center">
+        <h5 class="text-xl font-medium mb-2">
+            List of your todo's!
+        </h5>
+        <p class="text-gray-600 mb-6">
+            Information regarding stuff that needs to be completed
+        </p>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Info</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                {% for todo in todos %}
+                {% if todo.complete == False %}
+                <tr class="cursor-pointer hover:bg-gray-100">
+                    <td class="px-6 py-4 whitespace-nowrap">{{loop.index}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{todo.title}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <button onclick="window.location.href='edit-todo-page/{{todo.id}}'"
+                                type="button" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                {% else %}
+                <tr class="cursor-pointer bg-green-100">
+                    <td class="px-6 py-4 whitespace-nowrap">{{loop.index}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap line-through">{{todo.title}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <button onclick="window.location.href='edit-todo-page/{{todo.id}}'"
+                                type="button" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="add-todo-page" class="inline-block bg-blue-600 text-white px-4 py-2 mt-6 rounded-md hover:bg-blue-700">Add a new todo!</a>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+{% include 'layout.html' %}
+
+<div class="max-w-3xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+  <div class="border-b pb-4 mb-6 text-xl font-semibold">
+    Register
+  </div>
+  <div>
+    <form id="registerForm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="mb-4">
+          <label class="block text-gray-700">Email</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="email" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Username</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="username" required>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="mb-4">
+          <label class="block text-gray-700">First Name</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="firstname" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Last Name</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="lastname" required>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="mb-4">
+          <label class="block text-gray-700">Role</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="role" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Phone Number</label>
+          <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="phone_number" autocomplete="phone_number" required>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700">Password</label>
+        <input type="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="password" autocomplete="new-password" required>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700">Verify Password</label>
+        <input type="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="password2" autocomplete="new-password" required>
+      </div>
+      <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        Sign in
+      </button>
+    </form>
+  </div>
+  <div class="mt-6 text-gray-500 text-sm text-center">
+    <a href="/auth/login-page" class="text-indigo-600 hover:underline">Already have an account?</a>
+  </div>
+</div>

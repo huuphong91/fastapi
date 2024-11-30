@@ -1,0 +1,31 @@
+{% include 'layout.html' %}
+
+<div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+  <div class="border-b pb-4 mb-6 text-lg font-semibold">
+    Make a new todo
+  </div>
+  <div>
+    <form id="todoForm">
+      <div class="mb-4">
+        <label class="block text-gray-700">Title</label>
+        <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="title" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Description</label>
+        <textarea class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" rows="3" name="description" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Priority</label>
+        <select class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="priority">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Add new todo</button>
+      <a href="/todos/todo-page" class="ml-4 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">Back</a>
+    </form>
+  </div>
+</div>

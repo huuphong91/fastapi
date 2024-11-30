@@ -1,0 +1,38 @@
+{% include 'layout.html' %}
+
+<div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+  <div class="border-b pb-4 mb-6 text-lg font-semibold">
+    Let's edit your todo!
+  </div>
+  <div>
+    <form id="editTodoForm">
+      <div class="mb-4">
+        <label class="block text-gray-700">Title</label>
+        <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="title" value="{{todo.title}}" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Description</label>
+        <textarea name="description" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" rows="3" required>{{todo.description}}</textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Priority</label>
+        <select name="priority" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          <option {% if todo.priority == 1 %} selected="selected" {% endif %}>1</option>
+          <option {% if todo.priority == 2 %} selected="selected" {% endif %}>2</option>
+          <option {% if todo.priority == 3 %} selected="selected" {% endif %}>3</option>
+          <option {% if todo.priority == 4 %} selected="selected" {% endif %}>4</option>
+          <option {% if todo.priority == 5 %} selected="selected" {% endif %}>5</option>
+        </select>
+      </div>
+      <div class="mb-4 flex items-center">
+        <input type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" name="complete" {% if todo.complete %} checked {% endif %}>
+        <label class="ml-2 block text-gray-700">Complete</label>
+      </div>
+      <div class="flex space-x-4">
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Edit your todo</button>
+        <button id="deleteButton" type="button" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Delete</button>
+        <a href="/todos/todo-page" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">Back</a>
+      </div>
+    </form>
+  </div>
+</div>
